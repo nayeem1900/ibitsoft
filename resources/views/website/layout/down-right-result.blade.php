@@ -7,9 +7,9 @@
             <p class="card-text">Stay at home for saftey self and nation. </p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Admission NOtice</li>
+            <li class="list-group-item">Admission Notice</li>
             <li class="list-group-item">Admission Result</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Short Course</li>
         </ul>
 
     </div>

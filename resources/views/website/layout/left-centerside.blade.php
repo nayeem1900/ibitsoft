@@ -8,7 +8,7 @@
 
     <div class="card-Left">
         <div class="card-body">
-            <a  href="{{URL::to('website.pages.comon')}}">ইসলামী ব্যাংক নার্সিং কলেজ, রাজশাহী একটি স্বনামধন্য বেসরকারী নার্সিং প্রতিষ্ঠান।</a>
+            <a  href="{{route('website.comon')}}">Nowadays recently there are requirements for specialized technical manpower to monitor exclusively in the areas of engineering</a>
         </div>
     </div>
 
@@ -27,9 +27,9 @@
             <p class="card-text">Stay at home for saftey self and nation. </p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Admission NOtice</li>
+            <li class="list-group-item">Admission Notice</li>
             <li class="list-group-item">Admission Result</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Our Teacher</li>
         </ul>
 
     </div>

@@ -46,6 +46,17 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+
+        //Guard for Admin
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'adminusers',
+        ],
+
+
+
     ],
 
     /*
@@ -75,6 +86,18 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        //for Admin
+        'adminusers' => [
+            'driver' => 'eloquent',
+            'model' => App\Adminuser::class,
+
+        ],
+
+
+
+
+
     ],
 
     /*
@@ -99,6 +122,20 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        //for Admin
+
+        'adminusers' => [
+            'provider' => 'adminusers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+
+
+
+
     ],
 
     /*

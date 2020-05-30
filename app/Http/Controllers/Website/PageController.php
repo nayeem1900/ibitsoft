@@ -10,22 +10,20 @@ class PageController extends Controller
 
 
 
-   /* public function index()
+   public function index()
     {
 
 
-        return view('website.index');
-        //
-    }*/
-
-    public function messageprincipal()
-    {
-
-
-        return view('pages.comon');
+        return view('index');
 
     }
 
+    public function messageprincipal(){
+
+
+        return view('website.pages.comon');
+
+    }
 
     //admission-info page
 
@@ -38,4 +36,33 @@ class PageController extends Controller
         return view('website.pages.admission-info');
 
     }
+
+
+    public function aboutus()
+    {
+
+
+        return view('website.pages.aboutus');
+
+    }
+
+
+public function gallery(){
+
+
+        return view('website.pages.gallery');
+
+
+}
+
+    public function contact(){
+
+
+        return view('website.pages.contact');
+
+
+    }
+
+
+
 }

@@ -3,13 +3,13 @@
     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-interval="1000">
-                <img src="{{asset('website/images/'. 'slider1.jpg')}}" class="d-block w-100" alt="...">
+                <img src="{{asset('website/images/'. 'slider1.png')}}" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item" data-interval="200">
+            <div class="carousel-item" data-interval="1000">
                 <img src="{{asset('website/images/'.'slider2.jpg')}}" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item">
-                <img src="{{asset('website/images/'. 'sloder3.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-interval="1000">
+                <img src="{{asset('website/images/'. 'slider3.jpg')}}" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">

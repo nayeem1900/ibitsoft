@@ -11,8 +11,8 @@
 
         <div class="col-md-4">
             <div class="thumbnail">
-                <p> hotline: 01818811220</p>
-                <p> email:nayeembd84@gmail.com</p>
+                <p> hotline: +880 1964 00 00 64 </p>
+                <p> email:ibitctg01@gmail.com</p>
 
 
                 <form class="form-inline">

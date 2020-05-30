@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use App\Providers\RouteServiceProvider;
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
+use Auth;
+use App\Adminuser;
 class RedirectIfAuthenticated
 {
     /**
@@ -19,9 +20,13 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+            return redirect()->route('student.index');
         }
 
         return $next($request);
     }
+
+
+
+
 }
