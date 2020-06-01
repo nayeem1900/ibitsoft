@@ -110,7 +110,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/admin/login', 'Admin\AdminController@adminlogin')->name('admin.login');
-Route::post('/admin/login/submit', 'Admin\AdminController@loginsubmit')->name('admin.login.submit');
+Route::post('/admin/login/submit', 'Admin\AdminController@login')->name('admin.login.submit');
 //Route::get('/admin/login', 'Admin\AloginController@showLoginForm')->name('admin.login');
 //Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
 //Route::post('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');

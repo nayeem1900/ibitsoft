@@ -11,6 +11,12 @@ use Image;
 class StudentinfoController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth:admin-api');
+    }
+
+
     public function index()
     {
 
