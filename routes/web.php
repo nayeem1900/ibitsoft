@@ -103,7 +103,7 @@ Route::group(['prefix'=>'website'], function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Admin User Login
@@ -115,3 +115,11 @@ Route::post('/admin/login/submit', 'Admin\AdminController@login')->name('admin.l
 //Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
 //Route::post('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');
 //Route::post('/logout/submit', 'Admin\LoginController@logout')->name('admin.logout');
+
+
+
+
+
+/*Route::get('/admin/login', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');*/

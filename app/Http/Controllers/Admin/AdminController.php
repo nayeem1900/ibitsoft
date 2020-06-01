@@ -10,10 +10,15 @@ use App\Adminuser;
 class AdminController extends Controller
 {
 
-    protected function guard()
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+   /* protected function guard()
     {
         return Auth::guard('admin');
-    }
+    }*/
 
 
 
