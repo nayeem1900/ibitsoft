@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Admin;
-
+namespace App\Http\Controllers\Admin;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-
 use Auth;
-
 class LoginController extends Controller
 {
     /*
@@ -22,9 +19,6 @@ class LoginController extends Controller
     |
     */
 
-
-
-
     use AuthenticatesUsers;
 
     /**
@@ -32,70 +26,44 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-
-   /* public function __construct()
+    public function __construct()
     {
-
-        // $this->middleware('guest')->except('logout');
-
         $this->middleware('guest:admin')->except('logout');
-    }*/
+    }
+
 
     public function showLoginForm()
     {
-       return view('auth.admin.login');
+
+        return view('admin.login');
 
     }
 
 
     public function login(Request $request)
     {
-
         $this->validate($request, [
-
-            'email' => 'required|email',
-            'password' => 'required',
-
+            'email' => 'required|string',
+            'password' => 'required|string',
         ]);
+        $credential = [
+            'email'=>$request->email,
+            'password'=>$request->password,
+        ];
 
-        //find ueer by this email
-
-
-
-//login this admin
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-
-
-            ///login now
-            return redirect()->intended(route('student.index'));
-
-
-        }else {
-
-            session()->flush('errors', 'InValid');
-            //return redirect()->route('admin.login');
-            return back();
+        if(Auth::guard('admin')->attempt($credential, $request->member)){
+            return redirect()->intended(route('admin.home'));
         }
+        return redirect()->back()->withInput($request->only('email,remember'));
     }
 
 
-
-    public function logout(Request $request)
-    {
-
-        $this->guard()->logout();
-        $request->session()->invalidate();
-        return redirect()->route('admin.login');
-
+    public function logout(Request $request){
+        Auth::guard('admin')->logout();
+        return redirect('/');
     }
+
 
 
 }

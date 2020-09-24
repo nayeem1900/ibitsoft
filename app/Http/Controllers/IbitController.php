@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Department;
 use Illuminate\Http\Request;
 use App\Ibit;
-
+use Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class IbitController extends Controller
 {
+
+
+
     public function __construct()
     {
         $this->middleware('auth:admin');
@@ -20,7 +24,6 @@ class IbitController extends Controller
 
         return view('ibit.index',compact('ibits'));
     }
-
 
 
 

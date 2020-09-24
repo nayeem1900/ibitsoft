@@ -4,26 +4,60 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 use App\Adminuser;
+use Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 
 class AdminController extends Controller
 {
 
+
+
+    use AuthenticatesUsers;
+
+
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('guest:admin')->except('logout');
+    }
+    public function showLoginForm(){
+        return view('auth.admin.login');
+    }
+    public function login(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+        $credential = [
+            'email'=>$request->email,
+            'password'=>$request->password,
+        ];
+
+        if(Auth::guard('admin')->attempt($credential, $request->member)){
+            return redirect()->intended(route('ibit.index'));
+        }
+        return redirect()->back()->withInput($request->only('email,remember'));
+    }
+    public function logout(Request $request){
+        Auth::guard('admin')->logout();
+        return redirect('/');
     }
 
-   /* protected function guard()
-    {
-        return Auth::guard('admin');
-    }*/
 
 
 
 
-    public function adminlogin(){
+
+
+
+
+
+
+
+  /* public function adminlogin(){
 
 
         return view('auth.admin.login',[
@@ -66,9 +100,11 @@ class AdminController extends Controller
 
 
 
-
     public function login(Request $request)
     {
+
+
+
         $this->validator($request);
 
         if(Auth::guard('admin')->attempt($request->only('email','password'),$request->filled('remember'))){
@@ -93,7 +129,7 @@ class AdminController extends Controller
             ->with('status','Admin has been logged out!');
     }
 
-
+*/
 
 
 }

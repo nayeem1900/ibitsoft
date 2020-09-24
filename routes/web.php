@@ -41,7 +41,7 @@ Route::group(['prefix'=>'admin_page'], function(){
 Route::group(['prefix'=>'student'], function(){
 
     Route::get('/', 'StudentinfoController@index')->name('student.index');
-Route::get('/create', 'StudentinfoController@admission_crate')->name('student.create');
+Route::get('/create', 'StudentinfoController@admission_create')->name('student.create');
 Route::post('/create', 'StudentinfoController@admission_save')->name('student.save');
     Route::get('/edit/{id}', 'StudentinfoController@admission_edit')->name('student.edit');
     Route::post('/edit/{id}', 'StudentinfoController@admission_update')->name('student.update');
@@ -103,20 +103,25 @@ Route::group(['prefix'=>'website'], function(){
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Admin User Login
 
 
-Route::get('/admin/login', 'Admin\AdminController@adminlogin')->name('admin.login');
-Route::post('/admin/login/submit', 'Admin\AdminController@login')->name('admin.login.submit');
-//Route::get('/admin/login', 'Admin\AloginController@showLoginForm')->name('admin.login');
-//Route::get('/admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
-//Route::post('/login/submit', 'Admin\LoginController@login')->name('admin.login.submit');
-//Route::post('/logout/submit', 'Admin\LoginController@logout')->name('admin.logout');
+Route::group(['prefix'=>'admin'], function() {
+
+    Route::get('/', 'AdminController@index')->name('admin.home');
+    Route::get('/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Admin\LoginController@login')->name('admin.login.submit');
+    Route::get('/logout', 'Admin\LoginController@logout')->name('admin.logout');
 
 
+
+
+
+
+});
 
 
 

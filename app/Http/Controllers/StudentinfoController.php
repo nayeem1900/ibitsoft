@@ -5,19 +5,13 @@ namespace App\Http\Controllers;
 use App\StudentAdmissioninfo;
 use Illuminate\Http\Request;
 use App\StudentImage;
-use Image;
-
-
-
 
 class StudentinfoController extends Controller
 {
-
-   public function __construct()
+    public function __construct()
     {
         $this->middleware('auth:admin');
     }
-
 
 
     public function index()
@@ -30,7 +24,7 @@ class StudentinfoController extends Controller
     }
 
 
-    public function admission_crate()
+    public function admission_create()
     {
 
 

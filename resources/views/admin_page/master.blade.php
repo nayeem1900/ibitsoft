@@ -38,7 +38,7 @@
                             </li>
                             <li><a><i class="fa fa-edit"></i> IBIT <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="form.html">Add IBIT</a></li>
+                                    <li><a href="{{route('ibit.create')}}">Add IBIT</a></li>
                                     <li><a href="form_advanced.html">All Student</a></li>
                                     <li><a href="form_validation.html">Form Validation</a></li>
                                     <li><a href="form_wizards.html">Form Wizard</a></li>
@@ -122,13 +122,13 @@
                                         <ul class="nav child_menu">
                                             <li class="sub_menu"><a href="level2.html">Level Two</a>
                                             </li>
-                                            <li><a href="#level2_1">Level Two</a>
+                                            <li><a href="{{route('admin.logout')}}">Logout</a>
                                             </li>
                                             <li><a href="#level2_2">Level Two</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#level1_2">Level One</a>
+                                    <li><a href="{{route('admin.logout')}}">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -177,7 +177,7 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item"  href="javascript:;">Help</a>
-                                <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                <a class="dropdown-item"  href="{{route('admin.logout')}}"><i class="fa fa-sign-out pull-right"></i> LogOut</a>
                             </div>
                         </li>
 

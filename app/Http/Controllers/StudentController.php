@@ -11,10 +11,9 @@ use App\Department;
 use Illuminate\Database;
 
 use Image;
-
+use Auth;
 class StudentController extends Controller
 {
-
 
     public function __construct()
     {

@@ -143,7 +143,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#level1_2">Level One</a>
+                                    <li><a href="{{route('admin.logout')}}">Logout</a>
                                     </li>
                                 </ul>
                             </li>
